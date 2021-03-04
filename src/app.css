@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+.main_container {
+  border: 2px solid grey;
+  box-shadow: 5px 5px 9px grey;
+  width: 50%;
+  text-align: center;
+  margin-left: 25%;
+  margin-top: 5%;
+  padding: 10px;
+}
+
+#heading {
+  font-size: 35px;
+  font-weight: 600;
+  font-family: "Bungee", cursive;
+  color: rgba(85, 107, 47, 0.726);
+  margin-bottom: 15px;
+}
+#resetBtn {
+  float: right;
+  background-color: tomato;
+  border: none;
+  margin: 5px;
+  padding: 5px 10px;
+  box-shadow: 4px 3px 7px grey;
+  border-radius: 3px;
+}
+#input_box {
+  border: none;
+  border-bottom: 1px solid grey;
+  font-size: 25px;
+  color: darkgreen;
+}
+.btn {
+  font-size: 20px;
+  padding: 3px 20px;
+  align-items: center;
+  margin-left: 50px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 4px 5px 5px grey;
+  margin-bottom: 30px;
+}

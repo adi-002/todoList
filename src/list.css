@@ -1,0 +1,9 @@
+.listCard {
+  position: relative;
+  text-align: left;
+  margin-left: 50px;
+}
+
+.list {
+  width: 70%;
+}
