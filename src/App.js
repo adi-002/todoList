@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import List from './List';
+import CompletedList from "./CompletedList";
 import "./app.css";
 
 
@@ -7,7 +8,7 @@ const App = () => {
 
   const [inputList, setInputList] = useState('');
   const [items, setItems] = useState([])  //creating an array in initial
-
+  const [completedItems, setCompletedItems] = useState([])
 
   const itemEvent = (event) => {
     setInputList(event.target.value)
@@ -21,9 +22,10 @@ const App = () => {
     //basically when you click on btn input becomes empty.
   }
   const addingItem = (compItem) => {
-    setItems((oldItems) => {
+    setCompletedItems((oldItems) => {
       return [...oldItems, `${compItem} (completed)`]
     })
+    setInputList("")
   }
 
   const deleteItems = (id) => {
@@ -33,9 +35,17 @@ const App = () => {
       })
     })
   }
+  const deleteCompletedItems = (id) => {
+    setCompletedItems((oldItems) => {
+      return oldItems.filter((arrE, index) => {
+        return index !== id
+      })
+    })
+  }
 
   const removeAllItem = () => {
     setItems([]);
+    setCompletedItems([]);
   }
 
 
@@ -57,6 +67,20 @@ const App = () => {
                 id={index}
                 text={val}
                 onSelect={deleteItems}
+                onComplete={addingItem}
+
+              />
+            })}
+          </ul>
+          <ul className="list-group list-group-flush">
+            {/* <li>{inputList}</li> */}
+
+            {completedItems.map((val, index) => {          //using Array map
+              return <CompletedList
+                key={index}
+                id={index}
+                text={val}
+                onSelect={deleteCompletedItems}
                 onComplete={addingItem}
 
               />

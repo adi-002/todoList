@@ -23,7 +23,7 @@ const List = (props) => {       //props is used coz val is not defined in List s
                 <div className="row list">
 
                     <div className="col">
-                        <li className="items" id="txt" onClick={completed}><ReactHashtag onHashtagClick={val => alert(val)}>{props.text}</ReactHashtag> </li>
+                        <li className="items" id="txt" onClick={completed}><ReactHashtag onHashtagClick={(val) => alert(`${val} :: Created Hashtag & it's function only`)}>{props.text}</ReactHashtag> </li>
                     </div>
                     <div className="col">
                         <button className="btn btn-danger btn-sm" onClick={() => {
